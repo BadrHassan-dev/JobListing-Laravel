@@ -18,6 +18,7 @@ Route::post('/register', [RegisterUserController::class, 'store']);
 
 Route::get('/login', [SessionController::class, 'create']);
 Route::post('/login', [SessionController::class, 'store']);
+Route::post('/logout', [SessionController::class, 'destroy']);
 
 // Job routes - JobController is a resource controller
 // Functions in JobController are: index, show, create, store, edit, update, destroy

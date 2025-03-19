@@ -30,6 +30,13 @@
                 <x-nav-link href="/laravel-time/public/login" :active="request()->is('login')">Login</x-nav-link>
                 <x-nav-link href="/laravel-time/public/register" :active="request()->is('register')">Register</x-nav-link>
                 @endguest
+
+                @auth
+                    <form method="POST" action="/laravel-time/public/logout">
+                        @csrf
+                        <x-form-button>Log Out</x-form-button>
+                    </form>
+                @endauth
                 <!--
                 <button type="button" class="relative rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
                 <span class="absolute -inset-1.5"></span>
